@@ -345,6 +345,9 @@ class LocalComputationBuilder {
   LocalOp DotGeneral(const LocalOp& lhs, const LocalOp& rhs,
                      const DotDimensionNumbers& dimension_numbers);
 
+  LocalOp Fft(const LocalOp& operand, FftType fft_type,
+      absl::Span<const int64> fft_length);
+
   LocalOp ConvGeneralDilated(
       const LocalOp& lhs, const LocalOp& rhs,
       absl::Span<const int64> window_strides,

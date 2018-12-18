@@ -617,6 +617,12 @@ class SingleOpTest(LocalComputationTest):
     c.DotGeneral(c.Constant(lhs), c.Constant(rhs), dimension_numbers)
     self._ExecuteAndCompareClose(c, expected=np.matmul(lhs, rhs))
 
+  def testFft(self):
+    c = self._NewComputation()
+    operand = NumpyArrayF32(rng.randn(1024))
+    c.Fft(c.Constant(operand), 1, 1024)
+    self._ExecuteAndCompareClose(c, expected=np.fft(operand))
+
   def testConvF32Same(self):
     c = self._NewComputation()
     a = lambda *dims: np.arange(np.prod(dims)).reshape(dims).astype("float32")

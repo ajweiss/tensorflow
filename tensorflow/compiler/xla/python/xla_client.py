@@ -1339,6 +1339,9 @@ class ComputationBuilder(object):
       dimension_numbers = GetDotDimensionsFromLists(dimension_numbers)
     return self._client.DotGeneral(lhs, rhs, dimension_numbers)
 
+  def Fft(self, operand, fft_type, fft_length):
+    return self._client.Fft(operand, fft_type, fft_length)
+
   def Conv(self, lhs, rhs, window_strides, padding, feature_group_count=1):
     """Enqueues a Conv operation onto the computation.
 

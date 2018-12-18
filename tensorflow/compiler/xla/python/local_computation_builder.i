@@ -1092,6 +1092,7 @@ tensorflow::ImportNumpy();
 %unignore xla::swig::LocalComputationBuilder::Le;
 %unignore xla::swig::LocalComputationBuilder::Dot;
 %unignore xla::swig::LocalComputationBuilder::DotGeneral;
+%unignore xla::swig::LocalComputationBuilder::Fft;
 %unignore xla::swig::LocalComputationBuilder::ConvGeneralDilated;
 %unignore xla::swig::LocalComputationBuilder::Add;
 %unignore xla::swig::LocalComputationBuilder::Sub;

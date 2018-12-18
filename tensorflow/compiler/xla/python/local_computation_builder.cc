@@ -774,6 +774,11 @@ LocalOp LocalComputationBuilder::DotGeneral(
   return xla::DotGeneral(lhs.op(), rhs.op(), dimension_numbers);
 }
 
+LocalOp Fft(const LocalOp& operand, FftType fft_type,
+    absl::Span<const int64> fft_length) {
+  return xla::Fft(operand.op(), fft_type, fft_length);
+}
+
 LocalOp LocalComputationBuilder::ConvGeneralDilated(
     const LocalOp& lhs, const LocalOp& rhs,
     absl::Span<const int64> window_strides,
